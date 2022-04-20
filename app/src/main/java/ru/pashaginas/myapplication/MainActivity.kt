@@ -21,3 +21,4 @@ class MainActivity : AppCompatActivity() {
         // shows second screen if main screen was tapped
     }
 }
+// TODO Recycleview
