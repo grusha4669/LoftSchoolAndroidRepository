@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ЛофтВейдерНеделя1</string>
     <string name="hello_world">Привет Мир!</string>
+    <string name="add">Добавить</string>
+    <string name="Amount">Количество</string>
+    <string name="Purpose">Назначение</string>
 </resources>
