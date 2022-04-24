@@ -15,7 +15,6 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         var costId = intent.getIntExtra("COST_ID", 0)
-        Log.e("TAG", "Cost Id = $costId")
-
+        Log.e("TAG", "Cost Id = $costId") //what?
     }
 }
