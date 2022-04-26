@@ -4,52 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/stardestroyer"
+    android:background="@color/white"
     tools:context=".SecondActivity">
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:layout_width="116dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/selector"
-        android:text="@string/add"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fields_height"
+        android:layout_margin="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:layout_margin="16dp"
-        android:background="#FFFFFF"
+        android:autofillHints=""
+        android:background="@color/teal_200"
         android:ems="10"
         android:hint="@string/Amount"
         android:imeOptions="actionDone"
         android:inputType="numberDecimal"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fields_height"
+        android:layout_margin="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_margin="16dp"
-        android:background="#FFFFFF"
+        android:autofillHints=""
+        android:background="@color/teal_200"
         android:hint="@string/Purpose"
         android:imeOptions="actionDone"
         android:inputType="textAutoCorrect"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fields_height"
+        android:layout_margin="16dp"
+        android:background="@drawable/selector"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

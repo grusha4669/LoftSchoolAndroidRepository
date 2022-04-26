@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">ЛофтВейдерНеделя1</string>
+    <string name="app_name">ГрушаМани</string>
     <string name="hello_world">Привет Мир!</string>
     <string name="add">Добавить</string>
     <string name="Amount">Количество</string>
     <string name="Purpose">Назначение</string>
+    <string name="auth_button">Войти</string>
 </resources>

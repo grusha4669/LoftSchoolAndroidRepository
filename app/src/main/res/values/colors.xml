@@ -9,7 +9,9 @@
     <color name="gray">#808080</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">@android:color/holo_red_dark</color>
-    <color name="background_blue">#3574FA</color>
+    <color name="backgroundColor">#3574FA</color>
+    <color name="mainAppColor">#3574FA</color>
+    <color name="appBarColor">#3574FA</color>
     <color name="green">#00FF00</color>
 
 </resources>
