@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    android:onClick="tapScreen"
+    android:onClick="onClick"
     tools:context=".MainActivity">
 
 
@@ -36,18 +36,18 @@
         app:layout_constraintTop_toBottomOf="@id/imageView3" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/auth_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="93dp"
-        android:autoLink="all"
         android:background="@drawable/button_rectangle4"
         android:drawableStart="@drawable/ic_google_logo"
+        android:onClick="onClick"
         android:text="@string/auth_button"
         android:textAllCaps="false"
         android:textColor="@color/appBarColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
