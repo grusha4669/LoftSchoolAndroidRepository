@@ -5,4 +5,5 @@
     <string name="Amount">Количество</string>
     <string name="Purpose">Назначение</string>
     <string name="auth_button">Войти</string>
+    <string name="toast">Готово</string>
 </resources>

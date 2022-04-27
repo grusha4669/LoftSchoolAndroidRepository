@@ -24,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
     private val listener = View.OnClickListener { view ->
         when (view.id) {
             R.id.button -> {
-                Toast.makeText(applicationContext, "Done", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, R.string.toast, Toast.LENGTH_SHORT).show()
             }
         }
     }

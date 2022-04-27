@@ -5,5 +5,6 @@
     <string name="Amount">Amount</string>
     <string name="Purpose">Purpose</string>
     <string name="auth_button">Log in</string>
+    <string name="toast">Done</string>
 
 </resources>
