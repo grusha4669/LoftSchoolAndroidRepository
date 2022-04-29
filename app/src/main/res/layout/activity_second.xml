@@ -48,9 +48,8 @@
         android:background="@drawable/selector"
         android:text="@string/add"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
