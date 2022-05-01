@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        val intent = Intent(this, SecondActivity::class.java)
-        startActivity(intent)
-    }
+        val intent = Intent(this, ThirdActivity::class.java)
+        startActivity(intent) }
 
 }
+

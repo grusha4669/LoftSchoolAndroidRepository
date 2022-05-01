@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
     android:orientation="horizontal">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/moneyCellTitleView"
+        android:id="@+id/textViewLarge"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:layout_marginVertical="8dp"
+        android:layout_weight="1"
+        android:textColor="#666664"
         android:textSize="16sp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/moneyCellValueView"
+        android:id="@+id/textViewSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
         android:layout_marginStart="16dp"
-        android:alpha="0.8"
-        android:textColor="@color/black"
+        android:textColor="@color/expenses_color"
+        android:textSize="16sp"
         />
-
 </LinearLayout>

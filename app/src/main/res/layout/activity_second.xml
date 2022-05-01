@@ -4,48 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:background="@color/white"
     tools:context=".SecondActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fields_height"
-        android:layout_margin="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:autofillHints=""
-        android:background="@color/teal_200"
-        android:ems="10"
-        android:hint="@string/Amount"
-        android:imeOptions="actionDone"
-        android:inputType="numberDecimal"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:background="@color/fields_color"
+            android:ems="10"
+            android:hint="@string/Amount"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fields_height"
-        android:layout_margin="16dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:autofillHints=""
-        android:background="@color/teal_200"
-        android:hint="@string/Purpose"
-        android:imeOptions="actionDone"
-        android:inputType="textAutoCorrect"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints=""
+            android:background="@color/fields_color"
+            android:hint="@string/Purpose"
+            android:imeOptions="actionDone"
+            android:inputType="textAutoCorrect"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/add_button"
         android:layout_width="match_parent"
         android:layout_height="@dimen/fields_height"
         android:layout_margin="16dp"
-        android:background="@drawable/selector"
+        android:background="@drawable/add_fields_selector"
         android:text="@string/add"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
