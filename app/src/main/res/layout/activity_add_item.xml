@@ -7,17 +7,17 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:background="@color/white"
-    tools:context=".SecondActivity">
+    tools:context=".AddItemActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/til_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-
+            android:id="@+id/et_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -35,13 +35,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editText"
+        android:id="@+id/til_purpose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal">
+        app:layout_constraintTop_toBottomOf="@+id/til_amount">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_purpose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -63,8 +64,10 @@
         android:background="@drawable/add_fields_selector"
         android:text="@string/add"
         android:textColor="@color/white"
+        android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText" />
+        app:layout_constraintTop_toBottomOf="@id/til_purpose" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

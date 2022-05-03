@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
+            android:name=".AddItemActivity"
+            android:exported="true" />
         <activity
             android:name=".ThirdActivity"
             android:exported="true" />

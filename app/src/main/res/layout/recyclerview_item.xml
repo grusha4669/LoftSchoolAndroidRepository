@@ -6,17 +6,17 @@
     android:orientation="horizontal">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewLarge"
+        android:id="@+id/amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:layout_weight="1"
-        android:textColor="#666664"
+        android:textColor="@color/text_color"
         android:textSize="16sp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewSmall"
+        android:id="@+id/purpose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"

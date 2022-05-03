@@ -35,14 +35,14 @@ class ThirdActivity : AppCompatActivity() {
 
     private fun fillList(): List<String> {
         val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("$i element") }
+        (0..30).forEach { i -> data.add("$i item") }
         return data
     }
 
     private val fablistener = View.OnClickListener { view ->
         when (view.id) {
             R.id.fab -> {
-                val intent = Intent(this, SecondActivity::class.java)
+                val intent = Intent(this, AddItemActivity::class.java)
                 startActivity(intent)
             }
         }
