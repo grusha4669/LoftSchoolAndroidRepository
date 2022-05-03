@@ -16,7 +16,6 @@ class AddItemActivity : AppCompatActivity() {
     private lateinit var amount: TextInputEditText
     private lateinit var purpose: TextInputEditText
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
@@ -25,20 +24,19 @@ class AddItemActivity : AppCompatActivity() {
         purpose = findViewById(R.id.et_purpose)
 
         addButton = findViewById(R.id.add_button)
-        addButton.setOnClickListener(listener)
+        addButton.setOnClickListener(clickListener)
+
+        fun buttonEnabled() {
+            addButton.isEnabled =
+                amount.text.toString().isNotEmpty() && purpose.text.toString().isNotEmpty()
+        }
 
         amount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (amount.text!!.isNotEmpty() && purpose.text!!.toString().isNotEmpty()) {
-                    addButton.isEnabled = true
-                } else {
-                    if (amount.text!!.isEmpty()) {
-                        addButton.isEnabled = false
-                    }
-                }
+                buttonEnabled()
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -50,13 +48,7 @@ class AddItemActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (purpose.text!!.isNotEmpty() && amount.text!!.toString().isNotEmpty()) {
-                    addButton.isEnabled = true
-                } else {
-                    if (purpose.text!!.isEmpty()) {
-                        addButton.isEnabled = false
-                    }
-                }
+                buttonEnabled()
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -67,13 +59,13 @@ class AddItemActivity : AppCompatActivity() {
         Log.e("TAG", "Cost Id = $costId") //what?
     }
 
-    private val listener = View.OnClickListener { view ->
+    private val clickListener = View.OnClickListener { view ->
         when (view.id) {
             R.id.add_button -> {
                 Toast.makeText(applicationContext, R.string.toast, Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, ThirdActivity::class.java)
-                //todo
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+
 //                setResult(Activity.RESULT_OK, Intent())
             }
         }

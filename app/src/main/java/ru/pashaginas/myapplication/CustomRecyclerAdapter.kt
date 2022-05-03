@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomRecyclerAdapter(private val names: List<String>) : RecyclerView
+class CustomRecyclerAdapter(private var names: MutableList<String>) : RecyclerView
 .Adapter<CustomRecyclerAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amount: TextView = itemView.findViewById(R.id.amount)
+//        val purpose: TextView = itemView.findViewById(R.id.purpose)
         val purpose: TextView = itemView.findViewById(R.id.purpose)
     }
 
@@ -21,7 +22,7 @@ class CustomRecyclerAdapter(private val names: List<String>) : RecyclerView
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.amount.text = names[position]
-        holder.purpose.text = "кот"
+        holder.purpose.text = names[position]
     }
 
     override fun getItemCount(): Int {
