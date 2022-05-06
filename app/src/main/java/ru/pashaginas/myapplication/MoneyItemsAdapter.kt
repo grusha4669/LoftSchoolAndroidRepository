@@ -6,21 +6,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomRecyclerAdapter(private var names: MutableList<String>) : RecyclerView
-.Adapter<CustomRecyclerAdapter.MyViewHolder>() {
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MoneyItemsAdapter(private var names: MutableList<String>) : RecyclerView
+.Adapter<MoneyItemsAdapter.MoneyViewHolder>() {
+    class MoneyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amount: TextView = itemView.findViewById(R.id.amount)
 //        val purpose: TextView = itemView.findViewById(R.id.purpose)
         val purpose: TextView = itemView.findViewById(R.id.purpose)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoneyViewHolder {
         val itemView  = LayoutInflater.from(parent.context)
             .inflate(R.layout.recyclerview_item, parent, false)
-        return MyViewHolder(itemView)
+        return MoneyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MoneyViewHolder, position: Int) {
         holder.amount.text = names[position]
         holder.purpose.text = names[position]
     }

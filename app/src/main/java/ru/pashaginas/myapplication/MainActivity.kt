@@ -2,8 +2,8 @@ package ru.pashaginas.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextWatcher
 import android.view.View
+import android.widget.Adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.main_activity_id, FragmentA()) //??
+            .commit()
+
         fab = findViewById(R.id.fab)
         fab.setOnClickListener(fablistener)
 
@@ -26,19 +31,19 @@ class MainActivity : AppCompatActivity() {
             this,
             LinearLayoutManager.VERTICAL, false
         )
-        recyclerView.adapter = CustomRecyclerAdapter(fillList())
+        recyclerView.adapter = MoneyItemsAdapter(fillList())
 
         recyclerView.addItemDecoration(
             DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
         )
         // divider added
-    }
+        }
 
     private fun fillList(): MutableList<String> {
         val data = mutableListOf<String>()
         (0..30).forEach { i -> data.add("$i item")}
-            //todo locale
-            return data
+        //todo locale
+        return data
         }
 
         private val fablistener = View.OnClickListener { view ->

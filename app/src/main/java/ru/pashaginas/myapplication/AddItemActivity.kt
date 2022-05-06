@@ -16,6 +16,9 @@ class AddItemActivity : AppCompatActivity() {
     private lateinit var amount: TextInputEditText
     private lateinit var purpose: TextInputEditText
 
+    private val KEY_AMOUNT = "amount"
+    private val KEY_PURPOSE = "purpose"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_item)
@@ -63,7 +66,12 @@ class AddItemActivity : AppCompatActivity() {
         when (view.id) {
             R.id.add_button -> {
                 Toast.makeText(applicationContext, R.string.toast, Toast.LENGTH_SHORT).show()
+                val a = amount.text.toString()
+                val p = purpose.text.toString()
+
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(KEY_AMOUNT, a)
+                intent.putExtra(KEY_PURPOSE, p)
                 startActivity(intent)
 
 //                setResult(Activity.RESULT_OK, Intent())
