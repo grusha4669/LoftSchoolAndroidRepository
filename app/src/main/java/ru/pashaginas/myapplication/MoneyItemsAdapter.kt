@@ -21,8 +21,8 @@ class MoneyItemsAdapter(private var names: MutableList<String>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: MoneyViewHolder, position: Int) {
-        holder.amount.text = names[position]
-        holder.purpose.text = names[position]
+        holder.amount
+        holder.purpose
     }
 
     override fun getItemCount(): Int {

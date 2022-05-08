@@ -72,9 +72,8 @@ class AddItemActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra(KEY_AMOUNT, a)
                 intent.putExtra(KEY_PURPOSE, p)
+                setResult(RESULT_OK, Intent())
                 startActivity(intent)
-
-//                setResult(Activity.RESULT_OK, Intent())
             }
         }
     }
