@@ -6,11 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MoneyItemsAdapter(private var names: MutableList<String>) : RecyclerView
+
+
+class MoneyItemsAdapter() : RecyclerView
 .Adapter<MoneyItemsAdapter.MoneyViewHolder>() {
+
+    private var mitems: MutableList<MoneyItem> = mutableListOf()
     class MoneyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amount: TextView = itemView.findViewById(R.id.amount)
-//        val purpose: TextView = itemView.findViewById(R.id.purpose)
+        //        val purpose: TextView = itemView.findViewById(R.id.purpose)
         val purpose: TextView = itemView.findViewById(R.id.purpose)
     }
 
@@ -21,12 +25,19 @@ class MoneyItemsAdapter(private var names: MutableList<String>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: MoneyViewHolder, position: Int) {
-        holder.amount
-        holder.purpose
+        holder.amount.text = mitems[position].amount.toString()
+        holder.purpose.text = mitems[position].purpose
     }
 
     override fun getItemCount(): Int {
-        return names.size
+        return mitems.size
     }
-    // override fun getItemCount() = names.size
+    fun setData(itemList: MutableList<MoneyItem>) {
+        mitems = itemList
+        notifyDataSetChanged()
+    }
+    fun addItem(moneyItem: MoneyItem) {
+        mitems.add(moneyItem)
+        notifyDataSetChanged()
+    }
 }

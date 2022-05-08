@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent) }
-
+        startActivity(intent)
+        finish()
+    }
 }
-

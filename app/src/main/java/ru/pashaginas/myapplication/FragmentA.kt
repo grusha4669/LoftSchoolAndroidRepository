@@ -17,8 +17,5 @@ class FragmentA : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        view.findViewById<View>(R.id.tv_fragment_a).setOnClickListener { v: View ->
-            (activity as BaseRouter?)!!.routeTo(FragmentB()) //do we truly need BaseRouter interface?
-        }
     }
 }

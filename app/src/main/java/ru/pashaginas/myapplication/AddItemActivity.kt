@@ -16,8 +16,11 @@ class AddItemActivity : AppCompatActivity() {
     private lateinit var amount: TextInputEditText
     private lateinit var purpose: TextInputEditText
 
-    private val KEY_AMOUNT = "amount"
-    private val KEY_PURPOSE = "purpose"
+    companion object {
+        const val KEY_AMOUNT = "amount"
+        const val KEY_PURPOSE = "purpose"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,11 +72,11 @@ class AddItemActivity : AppCompatActivity() {
                 val a = amount.text.toString()
                 val p = purpose.text.toString()
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent()
                 intent.putExtra(KEY_AMOUNT, a)
                 intent.putExtra(KEY_PURPOSE, p)
-                setResult(RESULT_OK, Intent())
-                startActivity(intent)
+                setResult(RESULT_OK, intent)
+                finish()
             }
         }
     }
