@@ -8,4 +8,5 @@
     <string name="toast">Готово</string>
     <string name="fragment_a">Доходы</string>
     <string name="fragment_b">Расходы</string>
+    <string name="fragment_c">Баланс</string>
 </resources>

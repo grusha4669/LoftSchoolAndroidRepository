@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class MoneyItemsAdapter() : RecyclerView
+class MoneyItemsAdapter : RecyclerView
 .Adapter<MoneyItemsAdapter.MoneyViewHolder>() {
 
     private var mitems: MutableList<MoneyItem> = mutableListOf()

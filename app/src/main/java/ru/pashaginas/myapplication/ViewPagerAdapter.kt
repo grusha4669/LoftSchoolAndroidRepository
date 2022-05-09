@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
-    override fun getItemCount(): Int = 2
+    override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
 //        if (position == 0) {
@@ -20,6 +20,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
         return when (position) {
             0 -> FragmentA()
             1 -> FragmentB()
+            2 -> FragmentC()
             else -> {
                 throw Resources.NotFoundException("Fragment not found")
             }

@@ -8,5 +8,6 @@
     <string name="toast">Done</string>
     <string name="fragment_a">Incomes</string>
     <string name="fragment_b">Expenses</string>
+    <string name="fragment_c">Balance</string>
 
 </resources>

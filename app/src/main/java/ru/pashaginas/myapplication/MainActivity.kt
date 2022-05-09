@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
-        const val RCODE = 500
+        const val RESCODE = 500
     }
 
     private val fablistener = View.OnClickListener { view ->
         when (view.id) {
             R.id.fab -> {
                 val intent = Intent(this, AddItemActivity::class.java)
-                startActivityForResult(intent, RCODE)
+                startActivityForResult(intent, RESCODE)
             }
         }
     }
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             tab.text = when(position) {
                 0 -> getString(R.string.fragment_a)
                 1 -> getString(R.string.fragment_b)
+                2 -> getString(R.string.fragment_c)
                 else -> {
                     throw Resources.NotFoundException("Fragment not found")
                 }
@@ -73,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (RCODE == RCODE && data != null) {
+        if (RESCODE == RESCODE && data != null) {
             itemsAdapter.addItem(
                 MoneyItem(
                     data.getStringExtra(AddItemActivity.KEY_AMOUNT)?.toInt() ?: 0,
