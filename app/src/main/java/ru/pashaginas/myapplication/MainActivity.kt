@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,8 +48,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(
             DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
         )
-        val vp: ViewPager2 = findViewById(R.id.viewpager)
-        vp.adapter = ViewPagerAdapter()
+//        val vp: ViewPager2 = findViewById(R.id.viewpager)
+//        vp.adapter = ViewPagerAdapter()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
