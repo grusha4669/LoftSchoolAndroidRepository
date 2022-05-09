@@ -7,19 +7,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-
 class MoneyItemsAdapter() : RecyclerView
 .Adapter<MoneyItemsAdapter.MoneyViewHolder>() {
 
     private var mitems: MutableList<MoneyItem> = mutableListOf()
+
     class MoneyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amount: TextView = itemView.findViewById(R.id.amount)
-        //        val purpose: TextView = itemView.findViewById(R.id.purpose)
         val purpose: TextView = itemView.findViewById(R.id.purpose)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoneyViewHolder {
-        val itemView  = LayoutInflater.from(parent.context)
+        val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.recyclerview_item, parent, false)
         return MoneyViewHolder(itemView)
     }
@@ -32,10 +31,7 @@ class MoneyItemsAdapter() : RecyclerView
     override fun getItemCount(): Int {
         return mitems.size
     }
-    fun setData(itemList: MutableList<MoneyItem>) {
-        mitems = itemList
-        notifyDataSetChanged()
-    }
+
     fun addItem(moneyItem: MoneyItem) {
         mitems.add(moneyItem)
         notifyDataSetChanged()
