@@ -2,7 +2,7 @@ package ru.pashaginas.myapplication.remote
 
 import com.google.gson.annotations.SerializedName
 
-internal class MoneyRemoteItem {
+class MoneyRemoteItem {
     @SerializedName("id")
     val itemId: String? = null
 

@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         if (RESULT_CODE == RESULT_CODE && data != null) {
             itemsAdapter.addItem(
                 MoneyItemDataClass(
-                    data.getStringExtra(AddItemActivity.KEY_AMOUNT)?.toInt() ?: 0,
+                    data.getStringExtra(AddItemActivity.KEY_AMOUNT)?: "",
                     data.getStringExtra(AddItemActivity.KEY_PURPOSE) ?: ""
                 )
             )
