@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
-
     companion object {
         const val RESULT_CODE = 500
     }
@@ -46,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         fab = findViewById(R.id.fab)
         fab.setOnClickListener(fablistener)
 
+        //todo rw to fragment class
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView_main)
         recyclerView.layoutManager = LinearLayoutManager(
             this,
@@ -73,10 +73,9 @@ class MainActivity : AppCompatActivity() {
                     throw Resources.NotFoundException("Fragment not found")
                 }
             }
-
         }.attach()
     }
-
+    //??
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (RESULT_CODE == RESULT_CODE && data != null) {
