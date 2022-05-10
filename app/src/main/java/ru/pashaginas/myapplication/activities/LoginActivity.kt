@@ -1,9 +1,10 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.myapplication.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import ru.pashaginas.myapplication.R
 
 
 class LoginActivity : AppCompatActivity() {

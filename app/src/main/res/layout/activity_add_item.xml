@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:background="@color/white"
-    tools:context=".AddItemActivity">
+    tools:context=".activities.AddItemActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_amount"

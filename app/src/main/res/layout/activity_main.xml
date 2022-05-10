@@ -5,7 +5,7 @@
     android:id="@+id/main_activity_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddItemActivity">
+    tools:context=".activities.AddItemActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerView_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -1,16 +1,18 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.myapplication.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import ru.pashaginas.myapplication.MoneyItemDataClass
+import ru.pashaginas.myapplication.R
 
 
 class MoneyItemsAdapter : RecyclerView
 .Adapter<MoneyItemsAdapter.MoneyViewHolder>() {
 
-    private var mitems: MutableList<MoneyItem> = mutableListOf()
+    private var mitems: MutableList<MoneyItemDataClass> = mutableListOf()
 
     class MoneyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val amount: TextView = itemView.findViewById(R.id.amount)
@@ -32,8 +34,8 @@ class MoneyItemsAdapter : RecyclerView
         return mitems.size
     }
 
-    fun addItem(moneyItem: MoneyItem) {
-        mitems.add(moneyItem)
+    fun addItem(moneyItemDataClass: MoneyItemDataClass) {
+        mitems.add(moneyItemDataClass)
         notifyDataSetChanged()
     }
 }

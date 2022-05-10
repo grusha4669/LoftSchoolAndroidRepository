@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.myapplication.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
+import ru.pashaginas.myapplication.R
 
 class AddItemActivity : AppCompatActivity() {
     private lateinit var addButton: Button

@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.myapplication.activities
 
 import android.content.Intent
 import android.content.res.Resources
@@ -12,25 +12,29 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import ru.pashaginas.myapplication.MoneyItemDataClass
+import ru.pashaginas.myapplication.R
+import ru.pashaginas.myapplication.adapters.MoneyItemsAdapter
+import ru.pashaginas.myapplication.adapters.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var itemsAdapter: MoneyItemsAdapter
     private lateinit var fab: FloatingActionButton
-    private lateinit var adapter: ViewPagerAdapter
+    private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
 
     companion object {
-        const val RESCODE = 500
+        const val RESULT_CODE = 500
     }
 
     private val fablistener = View.OnClickListener { view ->
         when (view.id) {
             R.id.fab -> {
                 val intent = Intent(this, AddItemActivity::class.java)
-                startActivityForResult(intent, RESCODE)
+                startActivityForResult(intent, RESULT_CODE)
             }
         }
     }
@@ -42,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         fab = findViewById(R.id.fab)
         fab.setOnClickListener(fablistener)
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView_main)
         recyclerView.layoutManager = LinearLayoutManager(
             this,
             LinearLayoutManager.VERTICAL, false
@@ -53,9 +57,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(
             DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
         )
-        adapter = ViewPagerAdapter(this)
+
+        viewPagerAdapter = ViewPagerAdapter(this)
         viewPager = findViewById(R.id.pager)
-        viewPager.adapter = adapter
+        viewPager.adapter = viewPagerAdapter
 
         tabLayout = findViewById(R.id.tab_layout)
 
@@ -74,9 +79,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (RESCODE == RESCODE && data != null) {
+        if (RESULT_CODE == RESULT_CODE && data != null) {
             itemsAdapter.addItem(
-                MoneyItem(
+                MoneyItemDataClass(
                     data.getStringExtra(AddItemActivity.KEY_AMOUNT)?.toInt() ?: 0,
                     data.getStringExtra(AddItemActivity.KEY_PURPOSE) ?: ""
                 )
