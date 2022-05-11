@@ -17,7 +17,7 @@ class LoftApp : Application() {
 
     private fun configureRetrofit() {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level
+        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         val okHttpClient: OkHttpClient = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
             .build()
@@ -29,4 +29,5 @@ class LoftApp : Application() {
             .build()
         moneyApi = retrofit.create(MoneyApi::class.java)
     }
+
 }

@@ -6,5 +6,5 @@ import retrofit2.http.Query
 
 interface MoneyApi  {
     @GET("./items")
-    fun getMoneyItems(@Query("type") type: String?): Single<String>?
+    fun getMoneyItems(@Query("type") type: String?): Single<MoneyResponse>?
 }

@@ -12,10 +12,14 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.pashaginas.myapplication.MoneyItemDataClass
 import ru.pashaginas.myapplication.R
 import ru.pashaginas.myapplication.adapters.MoneyItemsAdapter
 import ru.pashaginas.myapplication.adapters.ViewPagerAdapter
+import ru.pashaginas.myapplication.remote.MoneyApi
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,10 +28,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
+    private lateinit var compositeDisposable: CompositeDisposable
 
     companion object {
         const val RESULT_CODE = 500
     }
+
 
     private val fablistener = View.OnClickListener { view ->
         when (view.id) {
@@ -64,8 +70,8 @@ class MainActivity : AppCompatActivity() {
 
         tabLayout = findViewById(R.id.tab_layout)
 
-        TabLayoutMediator(tabLayout,viewPager) {tab, position ->
-            tab.text = when(position) {
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
                 0 -> getString(R.string.fragment_a)
                 1 -> getString(R.string.fragment_b)
                 2 -> getString(R.string.fragment_c)
@@ -75,17 +81,32 @@ class MainActivity : AppCompatActivity() {
             }
         }.attach()
     }
+
     //??
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (RESULT_CODE == RESULT_CODE && data != null) {
             itemsAdapter.addItem(
                 MoneyItemDataClass(
-                    data.getStringExtra(AddItemActivity.KEY_AMOUNT)?: "",
+                    data.getStringExtra(AddItemActivity.KEY_AMOUNT)?.toInt() ?: 0,
                     data.getStringExtra(AddItemActivity.KEY_PURPOSE) ?: ""
                 )
             )
         }
+    }
 
+    fun fetch(moneyApi: MoneyApi) {
+        moneyApi.getMoneyItems("")
+            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(AndroidSchedulers.mainThread())
+            ?.subscribe({
+            }, {
+            }
+            )?.let { compositeDisposable.add(it) }
+    }
+
+    override fun onDestroy() {
+        compositeDisposable.dispose()
+        super.onDestroy()
     }
 }
