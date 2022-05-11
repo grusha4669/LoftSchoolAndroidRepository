@@ -3,7 +3,9 @@ package ru.pashaginas.myapplication.activities
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,11 +17,15 @@ import com.google.android.material.tabs.TabLayoutMediator
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import okhttp3.internal.toImmutableList
+import ru.pashaginas.myapplication.LoftApp
 import ru.pashaginas.myapplication.MoneyItemDataClass
 import ru.pashaginas.myapplication.R
 import ru.pashaginas.myapplication.adapters.MoneyItemsAdapter
 import ru.pashaginas.myapplication.adapters.ViewPagerAdapter
 import ru.pashaginas.myapplication.remote.MoneyApi
+import ru.pashaginas.myapplication.remote.MoneyRemoteItem
+import ru.pashaginas.myapplication.remote.MoneyResponse
 
 class MainActivity : AppCompatActivity() {
 
@@ -95,12 +101,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun fetch(moneyApi: MoneyApi) {
-        moneyApi.getMoneyItems("")
+    private fun fetchData(moneyApi: MoneyApi) {
+        moneyApi.getMoneyItems("income")
             ?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe({
+                it.status.equals("success")
+//                moneyResponse.getItemList.forEach { moneyItems.add(...)}
+//                Log.e("TAG", it.moneyItemsList?.first()?.itemId?.count().toString())
             }, {
+                error("error")
             }
             )?.let { compositeDisposable.add(it) }
     }
