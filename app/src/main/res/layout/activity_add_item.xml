@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:background="@color/white"
     tools:context=".activities.AddItemActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -29,7 +30,9 @@
             android:hint="@string/amount"
             android:imeOptions="actionDone"
             android:inputType="numberDecimal"
+            android:textColor="@color/text_input_color"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,6 +41,7 @@
         android:id="@+id/til_purpose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_amount">
 
@@ -53,7 +57,9 @@
             android:hint="@string/purpose"
             android:imeOptions="actionDone"
             android:inputType="textAutoCorrect"
-            android:textSize="20sp" />
+            android:textColor="@color/text_input_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -62,12 +68,11 @@
         android:layout_height="@dimen/fields_height"
         android:layout_margin="16dp"
         android:background="@drawable/add_fields_selector"
+        android:enabled="false"
         android:text="@string/add"
         android:textColor="@color/white"
-        android:enabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_purpose" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

@@ -16,8 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/gray"
-        />
+        app:tabTextColor="@color/gray" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
@@ -47,8 +46,10 @@
         android:backgroundTint="@color/round_button_color"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_shape"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+<!--todo RW to SRL-->

@@ -19,6 +19,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="text_color">#666664</color>
+    <color name="text_input_color">#3574FA</color>
     <color name="white">#FFFFFFFF</color>
 
 </resources>
