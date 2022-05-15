@@ -38,4 +38,9 @@ class MoneyItemsAdapter : RecyclerView
         mitems.add(moneyItemDataClass)
         notifyDataSetChanged()
     }
+    fun setList(itemList: List<MoneyItemDataClass>) {
+        mitems.clear()
+        mitems.addAll(itemList)
+        notifyDataSetChanged()
+    }
 }

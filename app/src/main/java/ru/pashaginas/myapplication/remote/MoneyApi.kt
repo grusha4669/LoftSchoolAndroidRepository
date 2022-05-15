@@ -6,7 +6,7 @@ import retrofit2.http.*
 
 interface MoneyApi  {
     @GET("./items")
-    fun getMoneyItems(@Query("type") type: String?): Single<MoneyResponse>?
+    fun getMoneyItems(@Query("type") type: String?): Single<MoneyResponse>
 
     @POST("./items/add")
     @FormUrlEncoded
@@ -14,5 +14,5 @@ interface MoneyApi  {
         @Field("price") price: Int,
         @Field("name") name: String?,
         @Field("type") type: String?
-    ): Completable?
+    ): Completable
 }

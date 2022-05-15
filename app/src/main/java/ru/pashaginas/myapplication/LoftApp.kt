@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 
 class LoftApp : Application() {
-    var moneyApi: MoneyApi? = null
+    lateinit var moneyApi: MoneyApi
     override fun onCreate() {
         super.onCreate()
         configureRetrofit()

@@ -9,5 +9,7 @@
     <string name="fragment_a">Incomes</string>
     <string name="fragment_b">Expenses</string>
     <string name="fragment_c">Balance</string>
+    <string name="error">Error</string>
+
 
 </resources>

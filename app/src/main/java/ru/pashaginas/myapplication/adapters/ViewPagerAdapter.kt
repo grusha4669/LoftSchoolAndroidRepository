@@ -4,9 +4,9 @@ import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ru.pashaginas.myapplication.fragments.FragmentA
-import ru.pashaginas.myapplication.fragments.FragmentB
-import ru.pashaginas.myapplication.fragments.FragmentC
+import ru.pashaginas.myapplication.R
+import ru.pashaginas.myapplication.fragments.BudgetFragment
+import ru.pashaginas.myapplication.fragments.BalanceFragment
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
@@ -15,9 +15,9 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     override fun createFragment(position: Int): Fragment {
 
         return when (position) {
-            0 -> FragmentA()
-            1 -> FragmentB()
-            2 -> FragmentC()
+            0 -> BudgetFragment.newInstance(R.color.green, "income")
+            1 -> BudgetFragment.newInstance(R.color.blue, "expense")
+            2 -> BalanceFragment()
             else -> {
                 throw Resources.NotFoundException("Fragment not found")
             }
