@@ -16,6 +16,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.internal.toImmutableList
 import ru.pashaginas.myapplication.LoftApp
@@ -26,6 +27,7 @@ import ru.pashaginas.myapplication.adapters.ViewPagerAdapter
 import ru.pashaginas.myapplication.remote.MoneyApi
 import ru.pashaginas.myapplication.remote.MoneyRemoteItem
 import ru.pashaginas.myapplication.remote.MoneyResponse
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -101,18 +103,32 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchData(moneyApi: MoneyApi) {
-        moneyApi.getMoneyItems("income")
+    fun fetchData() {
+        val disposable: Disposable = (getApplication() as LoftApp).moneyApi?.getMoneyItems("income")
             ?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())
-            ?.subscribe({
-                it.status.equals("success")
-//                moneyResponse.getItemList.forEach { moneyItems.add(...)}
-//                Log.e("TAG", it.moneyItemsList?.first()?.itemId?.count().toString())
-            }, {
-                error("error")
-            }
-            )?.let { compositeDisposable.add(it) }
+            ?.subscribe({ moneyResponse ->
+                if (moneyResponse.status.equals("success")) {
+                    val moneyItems: MutableList<MoneyItemDataClass> = ArrayList<MoneyItemDataClass>()
+                    for (moneyRemoteItem in moneyResponse.moneyItemsList!!) {
+                        moneyItems.add(MoneyItemDataClass.getInstance(moneyRemoteItem))
+                    }
+                    itemsAdapter.addItem(MoneyItemDataClass("".toInt(),""))
+                } else {
+                    Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.add),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }) { throwable ->
+                Toast.makeText(
+                    getApplicationContext(),
+                    throwable.getLocalizedMessage(),
+                    Toast.LENGTH_LONG
+                ).show()
+            }!!
+        compositeDisposable.add(disposable)
     }
 
     override fun onDestroy() {
