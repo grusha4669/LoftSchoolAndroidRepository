@@ -6,4 +6,8 @@
     <string name="purpose">Назначение</string>
     <string name="auth_button">Войти</string>
     <string name="toast">Готово</string>
+    <string name="fragment_a">Доходы</string>
+    <string name="fragment_b">Расходы</string>
+    <string name="fragment_c">Баланс</string>
+    <string name="error">Ошибка</string>
 </resources>

@@ -1,6 +1,5 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.myapplication.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -10,11 +9,23 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
+import ru.pashaginas.myapplication.LoftApp
+import ru.pashaginas.myapplication.R
+import ru.pashaginas.myapplication.activities.MainActivity.Companion.FRAGMENT_TYPE
 
 class AddItemActivity : AppCompatActivity() {
     private lateinit var addButton: Button
     private lateinit var amount: TextInputEditText
     private lateinit var purpose: TextInputEditText
+    private var fragmentType2 : String? = null
+
+    companion object {
+        const val KEY_AMOUNT = "amount"
+        const val KEY_PURPOSE = "purpose"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +67,7 @@ class AddItemActivity : AppCompatActivity() {
         })
 
         val costId = intent.getIntExtra("COST_ID", 0)
+        fragmentType2 = intent.getStringExtra(FRAGMENT_TYPE)
         Log.e("TAG", "Cost Id = $costId") //what?
     }
 
@@ -63,10 +75,18 @@ class AddItemActivity : AppCompatActivity() {
         when (view.id) {
             R.id.add_button -> {
                 Toast.makeText(applicationContext, R.string.toast, Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-
-//                setResult(Activity.RESULT_OK, Intent())
+                val a = amount.text.toString()
+                val p = purpose.text.toString()
+                (application as LoftApp).moneyApi.postMoney(price = a.toInt(), name = p, fragmentType2)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                        {
+                            finish()
+                        }, {
+                            Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT)
+                        }
+                    )
             }
         }
     }
