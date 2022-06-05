@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication.fragments
+package ru.pashaginas.loftmoney.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,11 +13,11 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import ru.pashaginas.myapplication.LoftApp
-import ru.pashaginas.myapplication.MoneyItemDataClass
-import ru.pashaginas.myapplication.R
-import ru.pashaginas.myapplication.activities.MainActivity.Companion.FRAGMENT_TYPE
-import ru.pashaginas.myapplication.adapters.MoneyItemsAdapter
+import ru.pashaginas.loftmoney.LoftApp
+import ru.pashaginas.loftmoney.MoneyItemDataClass
+import ru.pashaginas.loftmoney.R
+import ru.pashaginas.loftmoney.activities.MainActivity.Companion.FRAGMENT_TYPE
+import ru.pashaginas.loftmoney.adapters.MoneyItemsAdapter
 
 
 //BudgetFragment

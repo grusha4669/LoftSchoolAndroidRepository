@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.loftmoney
 
 import org.junit.Test
 

@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".activities.AddItemActivity">
+    tools:context="ru.pashaginas.loftmoney.activities.AddItemActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_amount"

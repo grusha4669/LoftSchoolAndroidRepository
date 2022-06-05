@@ -1,7 +1,7 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.loftmoney
 
 import android.app.Application
-import ru.pashaginas.myapplication.remote.MoneyApi
+import ru.pashaginas.loftmoney.remote.MoneyApi
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

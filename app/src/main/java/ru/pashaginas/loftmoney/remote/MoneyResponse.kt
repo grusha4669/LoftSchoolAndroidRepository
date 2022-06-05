@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication.remote
+package ru.pashaginas.loftmoney.remote
 
 import com.google.gson.annotations.SerializedName
 

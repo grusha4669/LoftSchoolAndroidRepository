@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.loftmoney
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

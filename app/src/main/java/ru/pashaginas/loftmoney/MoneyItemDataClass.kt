@@ -1,6 +1,6 @@
-package ru.pashaginas.myapplication
+package ru.pashaginas.loftmoney
 
-import ru.pashaginas.myapplication.remote.MoneyRemoteItem
+import ru.pashaginas.loftmoney.remote.MoneyRemoteItem
 
 data class MoneyItemDataClass(val amount: Int, val purpose: String?)
 {

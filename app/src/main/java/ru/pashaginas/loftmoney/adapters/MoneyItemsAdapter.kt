@@ -1,12 +1,12 @@
-package ru.pashaginas.myapplication.adapters
+package ru.pashaginas.loftmoney.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.pashaginas.myapplication.MoneyItemDataClass
-import ru.pashaginas.myapplication.R
+import ru.pashaginas.loftmoney.MoneyItemDataClass
+import ru.pashaginas.loftmoney.R
 
 
 class MoneyItemsAdapter : RecyclerView

@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication.activities
+package ru.pashaginas.loftmoney.activities
 
 import android.content.Intent
 import android.content.res.Resources
@@ -10,8 +10,8 @@ import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import ru.pashaginas.myapplication.R
-import ru.pashaginas.myapplication.adapters.ViewPagerAdapter
+import ru.pashaginas.loftmoney.R
+import ru.pashaginas.loftmoney.adapters.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
 

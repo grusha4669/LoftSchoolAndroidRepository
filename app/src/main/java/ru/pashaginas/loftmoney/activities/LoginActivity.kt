@@ -1,10 +1,10 @@
-package ru.pashaginas.myapplication.activities
+package ru.pashaginas.loftmoney.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import ru.pashaginas.myapplication.R
+import ru.pashaginas.loftmoney.R
 
 
 class LoginActivity : AppCompatActivity() {

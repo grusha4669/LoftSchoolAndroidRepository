@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ГрушаМани</string>
+    <string name="app_name">ЛофтМани</string>
     <string name="hello_world">Привет Мир!</string>
     <string name="add">Добавить</string>
     <string name="amount">Количество</string>

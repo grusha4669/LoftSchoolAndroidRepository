@@ -1,12 +1,12 @@
-package ru.pashaginas.myapplication.adapters
+package ru.pashaginas.loftmoney.adapters
 
 import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import ru.pashaginas.myapplication.R
-import ru.pashaginas.myapplication.fragments.BudgetFragment
-import ru.pashaginas.myapplication.fragments.BalanceFragment
+import ru.pashaginas.loftmoney.R
+import ru.pashaginas.loftmoney.fragments.BudgetFragment
+import ru.pashaginas.loftmoney.fragments.BalanceFragment
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {

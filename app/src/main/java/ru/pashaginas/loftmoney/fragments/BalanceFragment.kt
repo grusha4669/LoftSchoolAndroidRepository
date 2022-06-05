@@ -1,11 +1,11 @@
-package ru.pashaginas.myapplication.fragments
+package ru.pashaginas.loftmoney.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.pashaginas.myapplication.R
+import ru.pashaginas.loftmoney.R
 
 class BalanceFragment : Fragment() {
 

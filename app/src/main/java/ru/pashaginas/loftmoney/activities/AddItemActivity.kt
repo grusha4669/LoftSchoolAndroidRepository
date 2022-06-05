@@ -1,4 +1,4 @@
-package ru.pashaginas.myapplication.activities
+package ru.pashaginas.loftmoney.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,9 +11,9 @@ import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
-import ru.pashaginas.myapplication.LoftApp
-import ru.pashaginas.myapplication.R
-import ru.pashaginas.myapplication.activities.MainActivity.Companion.FRAGMENT_TYPE
+import ru.pashaginas.loftmoney.LoftApp
+import ru.pashaginas.loftmoney.R
+import ru.pashaginas.loftmoney.activities.MainActivity.Companion.FRAGMENT_TYPE
 
 class AddItemActivity : AppCompatActivity() {
     private lateinit var addButton: Button
