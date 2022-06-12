@@ -6,7 +6,7 @@ import retrofit2.http.*
 
 interface MoneyApi  {
     @GET("./items")
-    fun getMoneyItems(@Query("type") type: String?): Single<MoneyResponse>
+    fun getMoneyItems(@Query("type") type: String?): Single<MoneyResponse> //auth token in params
 
     @POST("./items/add")
     @FormUrlEncoded

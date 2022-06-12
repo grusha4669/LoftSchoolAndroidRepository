@@ -22,12 +22,11 @@ class LoftApp : Application() {
             .addInterceptor(httpLoggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://verdant-violet.glitch.me/")
+            .baseUrl("https://verdant-violet.glitch.me/") //todo
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
         moneyApi = retrofit.create(MoneyApi::class.java)
     }
-
 }
